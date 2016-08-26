@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<head>
+    <title>Cryptoquip Scratch Sheet Web App</title>
+   <!-- Author: J. Apodaca    -->
+   <!-- Date:   July 7, 2014 -->
+   <!-- File:   PhrasePage.html -->
+   
+   <!-- Style specs are most often in the head -->
+   <!-- Add a little Style (external file) -->
+   <link rel="stylesheet" href="css/CryptoquipSSWA.css" type="text/css">
+   
+   <!-- This "Link" is essential for Using jQuery UI stuff! -->
+   <!--<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/base/jquery-ui.css"> -->
+   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css"> 
+   
+   <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+
+</head>
+<body> 
+<!-- ***********************Page 2 of 2 ************************************** -->  
+<div id="page-wrap">
+<h2>Scratch Sheet <br>for<br> Solving Newspaper Cryptoquips </h2>
+<div id="OP">
+<h3>Original Phrase</h3>
+</div>
+
+<h4>Here is the Phrase with Your Substitutions</h4>
+<p id="CCChanges"> </p>
+<p>
+</p>
+<div id="UserInput">
+<h3>Decrypting Area</h3>
+<!-- Show the Alphabet with textes below -->
+<table>
+<tr>
+<td>a</td>
+<td>b</td>
+<td>c</td>
+<td>d</td>
+<td>e</td>
+<td>f</td>
+<td>g</td>
+<td>h</td>
+<td>i</td>
+<td>j</td>
+<td>k</td>
+<td>l</td>
+<td>m</td>
+</tr>
+<tr>
+<!-- An HTML form with an input field that can contain only one letter (no numbers or special characters): -->
+<td><input class="text" type='text' maxlength="1" size="1" pattern="[A-Za-z]{1}" id="tb0" /></td>
+<td><input class="text" type='text' maxlength="1" size="1" pattern="[A-Za-z]{1}" id="tb1" /></td>
+<td><input class="text" type='text' maxlength="1" size="1" pattern="[A-Za-z]{1}" id="tb2" /></td>
+<td><input class="text" type='text' maxlength="1" size="1" pattern="[A-Za-z]{1}" id="tb3" /></td>
+<td><input class="text" type='text' maxlength="1" size="1" pattern="[A-Za-z]{1}" id="tb4" /></td>
+<td><input class="text" type='text' maxlength="1" size="1" pattern="[A-Za-z]{1}" id="tb5" /></td>
+<td><input class="text" type='text' maxlength="1" size="1" pattern="[A-Za-z]{1}" id="tb6" /></td>
+<td><input class="text" type='text' maxlength="1" size="1" pattern="[A-Za-z]{1}" id="tb7" /></td>
+<td><input class="text" type='text' maxlength="1" size="1" pattern="[A-Za-z]{1}" id="tb8" /></td>
+<td><input class="text" type='text' maxlength="1" size="1" pattern="[A-Za-z]{1}" id="tb9" /></td>
+<td><input class="text" type='text' maxlength="1" size="1" pattern="[A-Za-z]{1}" id="tb10" /></td>
+<td><input class="text" type='text' maxlength="1" size="1" pattern="[A-Za-z]{1}" id="tb11" /></td>
+<td><input class="text" type='text' maxlength="1" size="1" pattern="[A-Za-z]{1}" id="tb12" /></td>
+</tr>
+<tr>
+<td>n</td>
+<td>o</td>
+<td>p</td>
+<td>q</td>
+<td>r</td>
+<td>s</td>
+<td>t</td>
+<td>u</td>
+<td>v</td>
+<td>w</td>
+<td>x</td>
+<td>y</td>
+<td>z</td>
+</tr>
+<tr>
+<td><input class="text" type='text' maxlength="1" size="1" pattern="[A-Za-z]{1}" id="tb13" /></td>
+<td><input class="text" type='text' maxlength="1" size="1" pattern="[A-Za-z]{1}" id="tb14" /></td>
+<td><input class="text" type='text' maxlength="1" size="1" pattern="[A-Za-z]{1}" id="tb15" /></td>
+<td><input class="text" type='text' maxlength="1" size="1" pattern="[A-Za-z]{1}" id="tb16" /></td>
+<td><input class="text" type='text' maxlength="1" size="1" pattern="[A-Za-z]{1}" id="tb17" /></td>
+<td><input class="text" type='text' maxlength="1" size="1" pattern="[A-Za-z]{1}" id="tb18" /></td>
+<td><input class="text" type='text' maxlength="1" size="1" pattern="[A-Za-z]{1}" id="tb19" /></td>
+<td><input class="text" type='text' maxlength="1" size="1" pattern="[A-Za-z]{1}" id="tb20" /></td>
+<td><input class="text" type='text' maxlength="1" size="1" pattern="[A-Za-z]{1}" id="tb21" /></td>
+<td><input class="text" type='text' maxlength="1" size="1" pattern="[A-Za-z]{1}" id="tb22" /></td>
+<td><input class="text" type='text' maxlength="1" size="1" pattern="[A-Za-z]{1}" id="tb23" /></td>
+<td><input class="text" type='text' maxlength="1" size="1" pattern="[A-Za-z]{1}" id="tb24" /></td>
+<td><input class="text" type='text' maxlength="1" size="1" pattern="[A-Za-z]{1}" id="tb25" /></td>
+</tr>
+</table>
+
+</div>
+
+<div id="DA">
+</div>
+<div id="Notes">
+<p>Keep in mind: Letter Frequency in the English Language (ELF) [1]</p>
+<p>e t a o i n s r h l d c u m f p g w y b v k x j q z</p>
+</div>
+<div id="Buttons">
+<button id="btn0">Show Empty Array</button>
+<button id="btn1">Alphabetic Report</button>
+<button id="btn2">Sort by Occurrence</button>
+<button id="btn4" disabled>USE ELF to SOLVE</button>
+<button id="reset"> Reset Puzzle </button>
+<button id="help"> Help? </button>
+<p>
+<input type='button' value='Hide Report Area' id='btn3'>
+</p>
+
+</div>
+<div id="Statistics">
+
+<p id = "reportArea">Click on button above to hide this Report<br></p>
+  
+</div>
+
+<!-- ********************************************************************************* -->
+<small>[1] Special Thanks to: <a href="http://www.letterfrequency.org/ ">http://www.letterfrequency.org/</a>
+<p>
+See  <a href="http://www.word-game-world.com/cryptoquip.html ">http://www.word-game-world.com</a> for More Quips!
+</p>
+</small>
+
+<!-- ********************For jQuery Libraries **************************************** -->
+		<script type="text/javascript" src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"> </script>
+<!-- ********************For jQuery User Interface Libraries ************************* -->
+		<script src="//code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+<!-- ********************For J. Apodaca's Libaries *********************************** -->
+<script src="js/CryptoquipSSWA.js"> </script>
+
+    </div>
+	
+	<div id="dialog-message" title="Download complete" style="color:red" style="display:none;">
+  <p>
+    <span class="ui-icon ui-icon-circle-check" style="float:left; margin:0 7px 50px 0;"></span>
+    Your files have downloaded successfully into the My Downloads folder.
+  </p>
+  <p>
+    Currently using <b>36% of your storage space</b>.
+  </p>
+</div>
+
+</body>
+</html>

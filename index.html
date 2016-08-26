@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<head>
+    <title>Cryptoquip Scratch Sheet Web App</title>
+   <!-- Author: J. Apodaca    -->
+   <!-- Date:   July 7, 2014 (finished July 28)-->
+   <!-- File:   index.html -->
+   <!-- Exciting: Uses localStorage rather than cookies to move data between pages!!! -->
+   
+   <!-- Style specs are most often in the head -->
+   <!-- Add a little Style (external file) -->
+   <link rel="stylesheet" href="css/CryptoquipSSWA.css" type="text/css">
+   <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+
+</head>
+<body>
+
+<h1>Input Phrase </h1>
+
+<!-- ***********************Page 1 of 2 ************************************** -->      
+
+  <textarea rows="4" cols="100" id="quip" autofocus>K NDFC CQ OIP UQVL TJLLUL, AMLDUL.</textarea>
+                                      <!-- Decoded: I want to buy some cheese, please. -->
+        <br>                       
+  <button id="onward"> Show Scratch Sheet </button>
+  <br>
+  <small>Powered by jQuery. Cryptoquip Scratch Sheet Web App by J. Apodaca, July 2014</small>
+
+
+<!-- ********************************************************************************* -->
+
+<!-- JavaScripts are most often in the body -->
+<!-- Outside JavaScript, Here we evolk the JQuery gods. Alt: <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+<script type="text/javascript" src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"> </script>
+
+<!-- The old fashioned way of setting a global variable that persist between pages 
+is to set the data in a Cookie. The modern way is to use Local Storage, which has 
+good browser support.  -->
+<script>
+
+$(document).ready(function(){  //Copy data into a page-to-page variable, go to next page
+  $("#onward").click(function(){  
+  if (typeof(Storage) != "undefined") {
+  localStorage.setItem("CryptoQUIP.game.in.progress", $("#quip").val());// Under Construction!
+  window.location.href = "PhrasePage.html";
+  } else {
+  alert("No browser support for local storage.");
+  }
+  
+  });
+});
+</script>		
+</body>
+</html>
